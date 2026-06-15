@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel</title>
+    <link rel="stylesheet" href="travel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .lang-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: transparent;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #555;
+            font-size: 13px;
+            padding: 5px 10px;
+        }
+
+        .lang-btn:hover {
+            border-color: #aaa;
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 6px);
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            min-width: 120px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .lang-dropdown.open {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 9px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #444;
+        }
+
+        .lang-option:hover {
+            background: #f7f7f7;
+        }
+
+        .lang-option.selected {
+            background: #fef8ed;
+        }
+
+        .check-icon {
+            color: #F5A623;
+            display: none;
+        }
+
+        .lang-option.selected .check-icon {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="img/logo.png" alt="">
+        <nav>
+            <ul>
+                <li><a href="#" data-en="Destinations" data-ar="الوجهات">Desitnations</a></li>
+                <li><a href="#" data-en="Hotel" data-ar="الفنادق">Hotel</a></li>
+                <li><a href="#" data-en="Flights" data-ar="الرحلات">Flights</a></li>
+                <li><a href="#" data-en="Bookings" data-ar="الحجوزات">Bookings</a></li>
+                <li><a href="#" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+                <button class="but" data-en="Sign up" data-ar="إنشاء حساب">Sign up</button>
+                <li>
+                    <div class="lang-wrapper">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fa-solid fa-globe"></i>
+                            <span id="lang-label">EN</span>
+                            <i class="fa-solid fa-chevron-down" id="chevron" style="font-size:10px;"></i>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <div class="lang-option selected" data-lang="EN">English <span class="check-icon">✓</span></div>
+                            <div class="lang-option" data-lang="AR">العربية <span class="check-icon">✓</span></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="subtitle" data-en="BEST DESTINATIONS AROUND THE WORLD" data-ar="أفضل الوجهات حول العالم">
+                BEST DESTINATIONS AROUND THE WORLD
+            </span>
+
+            <h1 data-en="Travel, enjoy <br> and live a new <br> and full life" data-ar="سافر، استمتع <br> وعش حياة <br> جديدة ومليئة">
+                Travel, enjoy <br>
+                and live a new <br>
+                and full life
+            </h1>
+
+            <p data-en="Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the." data-ar="استكشف أجمل الوجهات حول العالم واستمتع بتجارب لا تُنسى. نقدم لك أفضل العروض والخدمات لرحلة مثالية.">
+                Built Wicket longer admire do barton vanity itself do in it.
+                Preferred to sportsmen it engrossed listening.
+                Park gate sell they west hard for the.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary" data-en="Find out more" data-ar="اكتشف المزيد">Find out more</a>
+                <div class="play-demo">
+                    <div class="play-icon"><div class="triangle"></div></div>
+                    <span data-en="Play Demo" data-ar="شاهد العرض">Play Demo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="img/Traveller 1.png" alt="Traveller">
+        </div>
+    </section>
+
+    <section class="CATEGORY">
+        <p style="text-align: center; color: #5E6282;" data-en="CATEGORY" data-ar="الفئات">CATEGORY</p>
+        <p style="text-align: center; color: #181E4B; font-size: 50px; font-weight: bold;" data-en="We Offer Best Services" data-ar="نقدم أفضل الخدمات">We Offer Best Services </p>
+        <div class="cards">
+            <div class="card-one">
+                <img src="img/satellite-dish.png" alt="">
+                <p style="font-weight: bold;" data-en="Calculated Weather" data-ar="طقس محسوب">Calculated Weather </p>
+                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="نوفر لك معلومات دقيقة عن الطقس لتخطيط رحلتك بشكل مثالي.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
+            </div>
+            <div class="card-two">
+                <img src="img/plane.png" alt="">
+                <p style="font-weight: bold;" data-en="Best Flights" data-ar="أفضل الرحلات">Calculated Weather </p>
+                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="احجز أفضل رحلاتك الجوية بأسعار مناسبة وخدمة ممتازة.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
+                <div class="box_orange"></div>
+            </div>
+            <div class="card-one">
+                <img src="img/image 25.png" alt="">
+                <p style="font-weight: bold;" data-en="Local Events" data-ar="الفعاليات المحلية">Calculated Weather </p>
+                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="اكتشف أفضل الفعاليات والأنشطة في وجهتك المفضلة.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
+            </div>
+            <div class="card-one">
+                <img src="img/power-supply 1.png" alt="">
+                <p style="font-weight: bold;" data-en="Customization" data-ar="التخصيص">Calculated Weather </p>
+                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="خصص رحلتك كما تريد واستمتع بتجربة سفر فريدة من نوعها.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="TopSelling">
+        <p style="text-align: center; color: #5E6282; font-weight:600;" data-en="Top Selling" data-ar="الأكثر مبيعاً">Top Selling</p>
+        <p style="text-align: center; color: #181E4B; font-size: 50px; font-weight: bold;" data-en="Top Destinations" data-ar="أفضل الوجهات">Top Destinations</p>
+
+        <div class="cardsCity">
+            <div class="cardCity">
+                <img src="img/London.png" alt="">
+                <div class="cityInfo">
+                    <p data-en="Rome, Italy" data-ar="روما، إيطاليا">Rome, Italy</p>
+                    <p>$5.42k</p>
+                </div>
+                <div class="tripInfo">
+                    <img src="img/navigation.png" alt="">
+                    <p data-en="10 Days Trip" data-ar="رحلة 10 أيام">10 Days Trip</p>
+                </div>
+            </div>
+
+            <div class="cardCity">
+                <img src="img/Europe.jpg" alt="">
+                <div class="cityInfo">
+                    <p data-en="London, UK" data-ar="لندن، المملكة المتحدة">London, UK</p>
+                    <p>$4.2k</p>
+                </div>
+                <div class="tripInfo">
+                    <img src="img/Navigation.png" alt="">
+                    <p data-en="12 Days Trip" data-ar="رحلة 12 يوماً">12 Days Trip</p>
+                </div>
+            </div>
+
+            <div class="cardCity">
+                <img src="img/Full Europe.png" alt="">
+                <div class="cityInfo">
+                    <p data-en="Full Europe" data-ar="جولة أوروبا الكاملة">Full Europe</p>
+                    <p>$15k</p>
+                </div>
+                <div class="tripInfo">
+                    <img src="img/navigation.png" alt="">
+                    <p data-en="28 Days Trip" data-ar="رحلة 28 يوماً">28 Days Trip</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Book">
+        <div class="left-content">
+            <p class="small-title" data-en="Easy and Fast" data-ar="سهل وسريع">Easy and Fast</p>
+            <h1 class="main-title" data-en="Book Your Next Trip In 3 Easy Steps" data-ar="احجز رحلتك القادمة في 3 خطوات سهلة">
+                Book Your Next Trip <br>In 3 Easy Steps
+            </h1>
+
+            <div class="paragraph">
+                <div class="icon yellow"><img src="img/Choose Destination.png" alt=""></div>
+                <div class="Book_text">
+                    <h3 data-en="Choose Destination" data-ar="اختر الوجهة">Choose Destination</h3>
+                    <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus." data-ar="اختر وجهتك المفضلة من بين مئات الخيارات المتاحة حول العالم.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                </div>
+            </div>
+
+            <div class="paragraph">
+                <div class="icon orange"><img src="img/Make Payment.png" alt=""></div>
+                <div class="Book_text">
+                    <h3 data-en="Make Payment" data-ar="أتمم الدفع">Make Payment</h3>
+                    <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus." data-ar="ادفع بأمان وسهولة عبر وسائل الدفع المتعددة المتاحة لديك.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                </div>
+            </div>
+
+            <div class="paragraph">
+                <div class="icon blue"><img src="img/Reach Airport on Selected Date.png" alt=""></div>
+                <div class="Book_text">
+                    <h3 data-en="Reach Airport on Selected Date" data-ar="توجه للمطار في الموعد المحدد">Reach Airport on Selected Date</h3>
+                    <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus." data-ar="احضر إلى المطار في الموعد المحدد واستمتع برحلتك.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="TripToGreece">
+                <img class="trip-image" src="img/Trip To Greece.jpg" alt="">
+                <h3 data-en="Trip To Greece" data-ar="رحلة إلى اليونان">Trip To Greece</h3>
+                <p class="date" data-en="14-29 June | by Robbin Joseph" data-ar="14-29 يونيو | بواسطة روبن جوزيف">14-29 June | by Robbin Joseph</p>
+                <div class="icons">
+                    <div class="circle"><img src="img/leaf 1.png" alt=""></div>
+                    <div class="circle"><img src="img/map 1.png" alt=""></div>
+                    <div class="circle"><img src="img/send 2.png" alt=""></div>
+                </div>
+                <div class="peopleHeart">
+                    <div class="people">
+                        <img src="img/building 1.png" alt="">
+                        <span data-en="24 people going" data-ar="24 شخص مسجل">24 people going</span>
+                    </div>
+                    <img class="heart" src="img/heart (6) 1.png" alt="">
+                </div>
+            </div>
+
+            <div class="ongoing-card">
+                <img src="img/Ongoing.png" alt="">
+                <div>
+                    <p class="ongoing-text" data-en="Ongoing" data-ar="جارية">Ongoing</p>
+                    <h4 data-en="Trip to Rome" data-ar="رحلة إلى روما">Trip to Rome</h4>
+                    <p class="progress-text">
+                        <span>40%</span> <span data-en="completed" data-ar="مكتملة">completed</span>
+                    </p>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="logos">
+        <div class="logos">
+            <img src="img/axon.png" alt="">
+            <img src="img/jetstar.png" alt="">
+            <img src="img/expedia.png" alt="" class="logoThree">
+            <img src="img/qantas (1).png" alt="">
+            <img src="img/alitalia.png" alt="">
+        </div>
+    </section>
+
+    <section class="subscribe">
+        <div class="subscribe-circles">
+            <div class="circle-one"></div>
+            <div class="circle-two"></div>
+        </div>
+
+        <h2 data-en="Subscribe to get information, latest news and other interesting offers about Jadoo" data-ar="اشترك للحصول على معلومات وآخر الأخبار والعروض المثيرة حول جادو">
+            Subscribe to get information, latest news and other
+            interesting offers about Jadoo
+        </h2>
+
+        <form class="subscribe-form">
+            <div class="input-box">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" id="email-input" placeholder="Your email" data-en-placeholder="Your email" data-ar-placeholder="بريدك الإلكتروني">
+            </div>
+            <button type="submit" data-en="Subscribe" data-ar="اشترك">Subscribe</button>
+        </form>
+
+        <div class="telegram"><i class="fa-brands fa-telegram"></i></div>
+    </section>
+
+    <div class="plus-pattern">
+        <span>+</span><span>+</span><span>+</span>
+        <span>+</span><span>+</span><span>+</span>
+        <span class="active">+</span><span>+</span><span>+</span>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Jadoo.</h2>
+                <p data-en="Book your trip in minute, get full Control for much longer." data-ar="احجز رحلتك في دقيقة، واحصل على تحكم كامل لفترة أطول.">
+                    Book your trip in minute, get full Control for much longer.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3 data-en="Company" data-ar="الشركة">Company</h3>
+                <ul>
+                    <li><a href="#" data-en="About" data-ar="عن الشركة">About</a></li>
+                    <li><a href="#" data-en="Careers" data-ar="وظائف">Careers</a></li>
+                    <li><a href="#" data-en="Mobile" data-ar="الجوال">Mobile</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3 data-en="Contact" data-ar="التواصل">Contact</h3>
+                <ul>
+                    <li><a href="#" data-en="Help/FAQ" data-ar="المساعدة / الأسئلة الشائعة">Help/FAQ</a></li>
+                    <li><a href="#" data-en="Press" data-ar="الصحافة">Press</a></li>
+                    <li><a href="#" data-en="Affiliates" data-ar="الشركاء">Affilates</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3 data-en="More" data-ar="المزيد">More</h3>
+                <ul>
+                    <li><a href="#" data-en="Airline fees" data-ar="رسوم الطيران">Airlinefees</a></li>
+                    <li><a href="#" data-en="Airline" data-ar="شركات الطيران">Airline</a></li>
+                    <li><a href="#" data-en="Low fare tips" data-ar="نصائح التوفير">Low fare tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <h4 data-en="Discover our app" data-ar="اكتشف تطبيقنا">Discover our app</h4>
+                <div class="app-buttons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright" data-en="All rights reserved@jadoo.co" data-ar="جميع الحقوق محفوظة@jadoo.co">
+            All rights reserved@jadoo.co
+        </div>
+    </footer>
+
+    <script>
+        const langBtn = document.getElementById('lang-btn');
+        const dropdown = document.getElementById('lang-dropdown');
+        const langLabel = document.getElementById('lang-label');
+        let currentLang = 'EN';
+
+        langBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => dropdown.classList.remove('open'));
+
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', e => {
+                e.stopPropagation();
+                const lang = opt.dataset.lang;
+                if (lang === currentLang) return;
+                currentLang = lang;
+
+                document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('selected'));
+                opt.classList.add('selected');
+                langLabel.textContent = lang;
+
+                const isAR = lang === 'AR';
+                document.documentElement.lang = isAR ? 'ar' : 'en';
+                document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    if (el.tagName === 'INPUT') return;
+                    el.innerHTML = isAR ? el.dataset.ar : el.dataset.en;
+                });
+
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    el.placeholder = isAR ? el.dataset.arPlaceholder : el.dataset.enPlaceholder;
+                });
+
+                dropdown.classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
