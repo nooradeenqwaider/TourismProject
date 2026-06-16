@@ -80,7 +80,12 @@
 
     <header>
         <img src="img/logo.png" alt="">
-        <nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="main-nav">
             <ul>
                 <li><a href="#" data-en="Destinations" data-ar="الوجهات">Desitnations</a></li>
                 <li><a href="#" data-en="Hotel" data-ar="الفنادق">Hotel</a></li>
@@ -367,6 +372,21 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.getElementById('hamburger');
+            nav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('nav ul li a, nav ul .but').forEach(el => {
+            el.addEventListener('click', () => {
+                document.getElementById('main-nav').classList.remove('open');
+                document.getElementById('hamburger').classList.remove('open');
+            });
+        });
+
         const langBtn = document.getElementById('lang-btn');
         const dropdown = document.getElementById('lang-dropdown');
         const langLabel = document.getElementById('lang-label');
