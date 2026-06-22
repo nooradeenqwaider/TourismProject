@@ -75,6 +75,51 @@
             display: inline;
         }
     </style>
+    <style>
+        .enjoy-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .enjoy-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 14px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAAMCAYAAACEAAGWAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAA79JREFUeAHtm01O20AUgN8bpxLqhrkBRqq6xTdoboBvUFhUoqtyBW4Aq1bqAnKDHAFu4O6RMCeo2VER+/U9e5zYjhMShxSSvk9KMpm8iZ3JeN6vEZbk7iT0m31PKVj0wPYAYnm//2MYLzKuhVaZtNGPM+SatMoh+i2i1j3KcXugJJDRNU9GkgHcm2JO/JnSxHLIcsRyPMb1+tX5JoAHqMxzlcqcJ+7RxLrvuJc25k3w+WmAgBEBBQj0m78pcEe7kHOqHMCmBJblY0oh+fhzGN2dhnb0CMHUT+HP33mt51CjbZ0ryqaBiwjJBp5lEKKHIQ/4BMsTT/UQxfA8UzJZsZE8e4E64YRMu2xNQTTk+LPAIH6bGkS8KfI5ZcVGNB4LptigDJoDFgphs0j4d0V5SzZNnD+3td/uMA2lmcu4OcWMN14z/zsXVeqzaDn+g+vfrQuygqDapi/nZaE7k7lrUijFX3wOV6oslLfMQkqgSm7RIwQ1K2v+EXILzKts6GLZe7w5ZCa36Px5w8mNm8ih5TfSLi/e2L36asErb42M2CNpMVqoauCw4qWW66n0WEBR1sjSSqBJW5hnxBuyhIbKMFH1M5OxAjHT1hc1rf4ZF0ZtTMVtbx5LjoMGAmqEF+pKBy0isPW+miWqKCuQuBDXZK3n656Sollfv8bAkF0dWeexeBh3X8Jg5M33ZsrrZOTWOa95i2nRNu/ZUzkfLmbQKVtJZyUgiw96cDmJwSqK0oHYhUbjtjBWGf4UI4m96T0Oyz6Qx3kNVhTjzdzkXrAoAp/7dpe6Jomu+PlMQ1b/Lyt5AuwF9PMGW93kISfm4DMoirJ5cL6LFc4Nt6xTQj4/YvYeBj3ndYCylawcDhKkygIeC0sk75CQj4eH3OqDoiibD3sMrAiOYU3cfg1DpHy/kGq0a1U8/44XUQIlogyyRzg1iFJB1AdFUbYMijhRMWQP4aa3A9FL5xNcjtEfRxdSilgpQGYg0kT5enhRJVBl/GeW1UGuGqgiYllZHIImZRVloyGiAWUQcdL6oFrCnZfuSiWhVPQVkgkrkAhSuNhfYjOXvYQQryrl6UUepSzD3YFzTW53Z21KYB55+OiP4aQy9WG1Om1FUd4u5Q2HFhD7/BqlRGeS1C5vLJWqPuNBIPeTSNWgkf6iLVV7tfuCZkQYkhTo+MP34RCUTryKEhBuT8IjD/ESFEVRusKKBZ7oeF/DRJ15NSUgjBPKbA2AB5ZdviPn8vmgKIqyKETXKcDA46Sy3A/BHkWfWEFkI4g1jzCfvwaphByMEO2iAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .hero-decore-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            max-width: 700px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero {
+            position: relative;
+        }
+        .hero-content, .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+        .CATEGORY {
+            position: relative;
+            overflow: visible;
+        }
+        .category-dots {
+            position: absolute;
+            top: 10px;
+            right: 40px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -111,13 +156,14 @@
     </header>
 
     <section class="hero">
+        <img src="img/Decore__2_.png" alt="" class="hero-decore-bg">
         <div class="hero-content">
             <span class="subtitle" data-en="BEST DESTINATIONS AROUND THE WORLD" data-ar="أفضل الوجهات حول العالم">
                 BEST DESTINATIONS AROUND THE WORLD
             </span>
 
-            <h1 data-en="Travel, enjoy <br> and live a new <br> and full life" data-ar="سافر، استمتع <br> وعش حياة <br> جديدة ومليئة">
-                Travel, enjoy <br>
+            <h1 data-en="Travel, <span class='enjoy-underline'>enjoy</span> <br> and live a new <br> and full life" data-ar="سافر، <span class='enjoy-underline'>استمتع</span> <br> وعش حياة <br> جديدة ومليئة">
+                Travel, <span class="enjoy-underline">enjoy</span> <br>
                 and live a new <br>
                 and full life
             </h1>
@@ -143,75 +189,67 @@
     </section>
 
     <section class="CATEGORY">
-        <p style="text-align: center; color: #5E6282;" data-en="CATEGORY" data-ar="الفئات">CATEGORY</p>
-        <p style="text-align: center; color: #181E4B; font-size: 50px; font-weight: bold;" data-en="We Offer Best Services" data-ar="نقدم أفضل الخدمات">We Offer Best Services </p>
-        <div class="cards">
-            <div class="card-one">
-                <img src="img/satellite-dish.png" alt="">
-                <p style="font-weight: bold;" data-en="Calculated Weather" data-ar="طقس محسوب">Calculated Weather </p>
-                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="نوفر لك معلومات دقيقة عن الطقس لتخطيط رحلتك بشكل مثالي.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
-            </div>
-            <div class="card-two">
-                <img src="img/plane.png" alt="">
-                <p style="font-weight: bold;" data-en="Best Flights" data-ar="أفضل الرحلات">Calculated Weather </p>
-                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="احجز أفضل رحلاتك الجوية بأسعار مناسبة وخدمة ممتازة.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
-                <div class="box_orange"></div>
-            </div>
-            <div class="card-one">
-                <img src="img/image 25.png" alt="">
-                <p style="font-weight: bold;" data-en="Local Events" data-ar="الفعاليات المحلية">Calculated Weather </p>
-                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="اكتشف أفضل الفعاليات والأنشطة في وجهتك المفضلة.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
-            </div>
-            <div class="card-one">
-                <img src="img/power-supply 1.png" alt="">
-                <p style="font-weight: bold;" data-en="Customization" data-ar="التخصيص">Calculated Weather </p>
-                <p style="color: #5E6282;" data-en="Built Wicket longer admire do barton vanity itself do in it." data-ar="خصص رحلتك كما تريد واستمتع بتجربة سفر فريدة من نوعها.">Built Wicket longer <br>admire do barton <br> vanity itself do in it.</p>
-            </div>
+
+    <div class="plus-pattern category-dots">
+        <span>+</span><span>+</span><span>+</span>
+        <span>+</span><span>+</span><span>+</span>
+        <span class="active">+</span><span>+</span><span>+</span>
+    </div>
+
+    <p class="category-subtitle">CATEGORY</p>
+    <h2 class="category-title">We Offer Best Services</h2>
+
+    <div class="cards">
+
+        <div class="service-card">
+            <div class="icon-box"></div>
+            <img src="img/satellite-dish.png" alt="">
+            <h3>Calculated Weather</h3>
+            <p>
+                Built Wicket longer <br>
+                admire do barton <br>
+                vanity itself do in it.
+            </p>
         </div>
-    </section>
 
-    <section class="TopSelling">
-        <p style="text-align: center; color: #5E6282; font-weight:600;" data-en="Top Selling" data-ar="الأكثر مبيعاً">Top Selling</p>
-        <p style="text-align: center; color: #181E4B; font-size: 50px; font-weight: bold;" data-en="Top Destinations" data-ar="أفضل الوجهات">Top Destinations</p>
+        <div class="service-card active-card">
+            <div class="icon-box"></div>
+            <img src="img/plane.png" alt="">
+            <h3>Best Flights</h3>
+            <p>
+                Engrossed listening. <br>
+                Park gate sell they <br>
+                west hard for the.
+            </p>
 
-        <div class="cardsCity">
-            <div class="cardCity">
-                <img src="img/London.png" alt="">
-                <div class="cityInfo">
-                    <p data-en="Rome, Italy" data-ar="روما، إيطاليا">Rome, Italy</p>
-                    <p>$5.42k</p>
-                </div>
-                <div class="tripInfo">
-                    <img src="img/navigation.png" alt="">
-                    <p data-en="10 Days Trip" data-ar="رحلة 10 أيام">10 Days Trip</p>
-                </div>
-            </div>
-
-            <div class="cardCity">
-                <img src="img/Europe.jpg" alt="">
-                <div class="cityInfo">
-                    <p data-en="London, UK" data-ar="لندن، المملكة المتحدة">London, UK</p>
-                    <p>$4.2k</p>
-                </div>
-                <div class="tripInfo">
-                    <img src="img/Navigation.png" alt="">
-                    <p data-en="12 Days Trip" data-ar="رحلة 12 يوماً">12 Days Trip</p>
-                </div>
-            </div>
-
-            <div class="cardCity">
-                <img src="img/Full Europe.png" alt="">
-                <div class="cityInfo">
-                    <p data-en="Full Europe" data-ar="جولة أوروبا الكاملة">Full Europe</p>
-                    <p>$15k</p>
-                </div>
-                <div class="tripInfo">
-                    <img src="img/navigation.png" alt="">
-                    <p data-en="28 Days Trip" data-ar="رحلة 28 يوماً">28 Days Trip</p>
-                </div>
-            </div>
+            <div class="orange-shape"></div>
         </div>
-    </section>
+
+        <div class="service-card">
+            <div class="icon-box"></div>
+            <img src="img/image 25.png" alt="">
+            <h3>Local Events</h3>
+            <p>
+                Barton vanity itself do <br>
+                in it. Preferd to men it <br>
+                engrossed listening.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-box"></div>
+            <img src="img/power-supply 1.png" alt="">
+            <h3>Customization</h3>
+            <p>
+                We deliver outsourced <br>
+                aviation services for <br>
+                military customers
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
     <section class="Book">
         <div class="left-content">
@@ -310,11 +348,7 @@
         <div class="telegram"><i class="fa-brands fa-telegram"></i></div>
     </section>
 
-    <div class="plus-pattern">
-        <span>+</span><span>+</span><span>+</span>
-        <span>+</span><span>+</span><span>+</span>
-        <span class="active">+</span><span>+</span><span>+</span>
-    </div>
+
 
     <footer>
         <div class="footer-container">
